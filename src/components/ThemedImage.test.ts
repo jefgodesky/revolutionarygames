@@ -1,5 +1,6 @@
 import { expect, describe, it } from 'vitest'
 import render from '../utils/testing/render.ts'
+// @ts-ignore
 import ThemedImage from './ThemedImage.astro'
 
 describe('ThemedImage', () => {

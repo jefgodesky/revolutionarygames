@@ -1,0 +1,69 @@
+@use "sass:color";
+@use "sass:math";
+@use "colors";
+@use "weights";
+
+@function to-alpha($percentage) {
+  @return math.div(100% - $percentage, 100%)
+}
+
+$themes: (
+  "light": (
+    "bg": colors.$white,
+    "bg1": color.adjust(colors.$white, $blackness: 10%),
+    "bg2": color.adjust(colors.$white, $blackness: 5%),
+    "fg": colors.$black,
+    "fg1": color.adjust(colors.$black, $whiteness: 20%),
+    "fg2": color.adjust(colors.$black, $whiteness: 10%),
+    "weights": (
+      "black": weights.$light-black,
+      "bold": weights.$light-bold,
+      "normal": weights.$light-normal
+    ),
+    "links": (
+      "base": colors.$hue204-light,
+      "hover": color.adjust(colors.$hue204-light, $whiteness: 30%),
+      "active": colors.$hue000-light,
+      "visited": colors.$hue306-light
+    ),
+    "messages": (
+      "info": color.adjust(colors.$hue204-light, $whiteness: colors.$light1),
+      "tip": color.adjust(colors.$black, $whiteness: colors.$light1),
+      "warning": color.adjust(colors.$hue051-light, $whiteness: colors.$light1),
+      "error": color.adjust(colors.$hue000-light, $whiteness: colors.$light1),
+      "success": color.adjust(colors.$hue102-light, $whiteness: colors.$light1),
+    ),
+    "shadows": (
+      "nav": 0 0 1em 0 colors.$black
+    )
+  ),
+  "dark": (
+    "bg": colors.$black,
+    "bg1": color.adjust(colors.$black, $whiteness: 10%),
+    "bg2": color.adjust(colors.$black, $whiteness: 5%),
+    "fg": colors.$white,
+    "fg1": color.adjust(colors.$white, $blackness: 20%),
+    "fg2": color.adjust(colors.$white, $blackness: 10%),
+    "weights": (
+      "black": weights.$dark-black,
+      "bold": weights.$dark-bold,
+      "normal": weights.$dark-normal
+    ),
+    "links": (
+      "base": colors.$hue204-dark,
+      "hover": color.adjust(colors.$hue204-dark, $whiteness: 20%),
+      "active": colors.$hue000-dark,
+      "visited": colors.$hue306-dark
+    ),
+    "messages": (
+      "info": color.adjust(colors.$hue204-dark, $blackness: colors.$dark1),
+      "tip": color.adjust(colors.$white, $blackness: colors.$dark1),
+      "warning": color.adjust(colors.$hue051-dark, $blackness: colors.$dark1),
+      "error": color.adjust(colors.$hue000-dark, $blackness: colors.$dark1),
+      "success": color.adjust(colors.$hue102-dark, $blackness: colors.$dark1),
+    ),
+    "shadows": (
+      "nav": 1em 1em 1em 1em colors.$black
+    )
+  )
+)

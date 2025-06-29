@@ -1,0 +1,66 @@
+@use 'sass:color';
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "themes";
+
+@function str-split($str, $delimiter) {
+  $index: string.index($str, $delimiter);
+  $pieces: ();
+
+  @while $index != null {
+    $pieces: append($pieces, string.slice($str, 1, $index - 1));
+    $str: string.slice($str, $index + string.length($delimiter));
+    $index: string.index($str, $delimiter);
+  }
+
+  $pieces: append($pieces, $str);
+  @return $pieces;
+}
+
+@function theme-get($path, $theme: "light") {
+  $value: null;
+  $keys: if(meta.type-of($path) == "string", string.split($path, "."), $path);
+  $current-map: map.get(themes.$themes, $theme);
+
+  @each $key in $keys {
+    $value: map.get($current-map, $key);
+    @if meta.type-of($value) == "map" {
+      $current-map: $value;
+    } @else {
+      @return $value;
+    }
+  }
+
+  @warn "The path ${path} does not lead to a valid value in the ${theme} theme.";
+  @return $value;
+}
+
+
+@mixin set-style($property, $var, $light_transformation: null, $dark_transformation: null, $amount: 0%) {
+  $light: theme-get($var, "light");
+  @if $light_transformation != null {
+    $light: meta.call(meta.get-function($light_transformation), $light, $amount);
+  }
+
+  $dark: theme-get($var, "dark");
+  @if $dark_transformation != null {
+    $dark: meta.call(meta.get-function($dark_transformation), $dark, $amount);
+  }
+
+  & {
+    #{$property}: $light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #{$property}: $dark;
+  }
+
+  [data-theme="light"] & {
+    #{$property}: $light;
+  }
+
+  [data-theme="dark"] & {
+    #{$property}: $dark;
+  }
+}

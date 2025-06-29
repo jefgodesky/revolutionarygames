@@ -1,0 +1,7 @@
+body {
+  padding: 0 2em;
+
+  @media (min-width: 50em) {
+    padding: 0 calc((100% / 2) - 20em);
+  }
+}
