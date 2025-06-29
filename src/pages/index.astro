@@ -1,5 +1,9 @@
 ---
 import Head from '../components/head.astro'
+import ThemedImage from '../components/ThemedImage.astro'
+
+import LogoLight from '../assets/logo.light.png'
+import LogoDark from '../assets/logo.dark.png'
 ---
 
 <html lang="en">
@@ -7,6 +11,15 @@ import Head from '../components/head.astro'
 		title="Revolutionary Games"
 		description="Revolutionary Games is a worker-owned collective revolutionizing tabletop game design with games and settings that deal with the challenges of revolutionary social change." />
 	<body>
-		<p>Hello world</p>
+		<main>
+			<ThemedImage
+				light={LogoLight}
+				dark={LogoDark}
+				alt=""
+				height={2000}
+				width={2000}
+				pictureClasses={['logo']}
+			/>
+		</main>
 	</body>
 </html>
