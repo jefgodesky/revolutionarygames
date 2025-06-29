@@ -3,4 +3,18 @@
 body {
   @include mixins.set-style("background-color", "bg");
   @include mixins.set-style("color", "fg");
+
+  & {
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/bg.dark.jpg")
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-image: url("/bg.light.jpg")
+  }
 }
