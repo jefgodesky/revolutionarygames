@@ -1,6 +1,10 @@
 body {
   padding: 0 2em;
 
+  main {
+    padding-bottom: 5em;
+  }
+
   @media (min-width: 50em) {
     padding: 0 calc((100% / 2) - 20em);
   }

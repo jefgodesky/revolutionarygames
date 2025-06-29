@@ -4,6 +4,15 @@ import ThemedImage from '../components/ThemedImage.astro'
 
 import LogoLight from '../assets/logo.light.png'
 import LogoDark from '../assets/logo.dark.png'
+
+import RnRLight from '../assets/rnr.light.png'
+import RnRDark from '../assets/rnr.dark.png'
+
+import SBLight from '../assets/sb.light.png'
+import SBDark from '../assets/sb.dark.png'
+
+import FWLight from '../assets/5w.light.png'
+import FWDark from '../assets/5w.dark.png'
 ---
 
 <MainLayout
@@ -12,7 +21,7 @@ import LogoDark from '../assets/logo.dark.png'
 	<ThemedImage
 		light={LogoLight}
 		dark={LogoDark}
-		alt=""
+		alt="Revolutionary Games"
 		height={298}
 		width={514}
 		pictureClasses={['logo']}
@@ -20,4 +29,65 @@ import LogoDark from '../assets/logo.dark.png'
 	<p>We are a worker-owned collective revolutionizing
 		tabletop game design with games and settings that deal with the
 		challenges of revolutionary social change.</p>
+
+	<section class="project" id="ruinsandrevolutions">
+		<ThemedImage
+			light={RnRLight}
+			dark={RnRDark}
+			alt="Ruins & Revolutions"
+			height={301}
+			width={1024}
+			pictureClasses={['logo']}
+		/>
+		<p><em>Ruins &amp; Revolutions</em> is our forthcoming ultra-light
+		ruleset that pushes play out of abstraction and mechanics and back
+		into your world and characters, with a few key tools to make it easy
+		to turn whatever happens next into a gaming experience with mechanical
+		weight that goes exactly as deep as you like and no further. It&rsquo;s
+		designed with maximum interoperability with popular existing tabletop
+		roleplaying game systems in mind so you can build a new campaign with
+		<em>Ruins &amp; Revolutions</em> from the start or switch the campaign
+		that you&rsquo;ve been playing for years over to it with just a few
+		hours&rsquo; notice.</p>
+	</section>
+
+	<section class="project" id="scarletbanner">
+		<ThemedImage
+			light={SBLight}
+			dark={SBDark}
+			alt="The Scarlet Banner"
+			height={232}
+			width={770}
+			pictureClasses={['logo']}
+		/>
+		<p><em>The Scarlet Banner</em> is a world that cries out for liberation
+		from greedy dragons that hoard all the wealth, vampires who herd the
+		common people like livestock, and theocracies who wield magic in the name
+		of their gods to root out any who oppose their doctrines. While the
+		elves, dwarves, orcs, and wizards will feel familiar to fans of modern
+		fantasy, what sets <em>The Scarlet Banner</em> apart is its deep history,
+		endless cultural diversity, and realistic treatment of how power really
+			works &mdash; and what it really takes to overthrow it.</p>
+	</section>
+
+	<section class="project" id="thefifthworld">
+		<ThemedImage
+			light={FWLight}
+			dark={FWDark}
+			alt="The Fifth World"
+			height={600}
+			width={1200}
+			pictureClasses={['logo']}
+		/>
+		<p><em>The Fifth World</em> is 144,000 days (one
+		<em>b&rsquo;ak&rsquo;tun</em> of the Maya calendar) from this moment.
+			Over four centuries in the future, after the collapse of civilization
+			and the Rusting Age that followed, the world has changed. Ice caps
+			have melted, seas have swelled, and jungles have overtaken the ruins
+			of the once-proud cities. Herds of elephants trample savannas in
+			Canada and Russia. Tigers prowl the broken, overgrown ruins of
+			London and Beijing. <em>The Fifth World</em> is an open source
+			shared universe exploring a neotribal, ecotopian, animist realist
+			vision of what our future could be.</p>
+	</section>
 </MainLayout>
