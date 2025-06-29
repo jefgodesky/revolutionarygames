@@ -13,6 +13,7 @@
     "astro": "^5.10.1"
   },
   "devDependencies": {
+    "happy-dom": "^18.0.1",
     "vitest": "^3.2.4",
     "vitest-matchmedia-mock": "^2.0.3"
   }
