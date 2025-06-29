@@ -1,0 +1,65 @@
+@use "../modules/mixins";
+
+body {
+  font-family: "Vollkorn", serif;
+  font-size: 1.1em;
+
+  @include mixins.set-style("font-weight", "weights.normal");
+
+  @media (min-width: 60rem) {
+    font-size: 1.2em;
+  }
+
+  @media (min-width: 80rem) {
+    font-size: 1.3em;
+  }
+
+  @media (min-width: 100rem) {
+    font-size: 1.4em;
+  }
+
+  @media (min-width: 120rem) {
+    font-size: 1.5em;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1;
+  padding: 1em 0 0.5em;
+}
+
+h1 {
+  font-family: "Vollkorn SC", serif;
+  font-size: 3em;
+
+  @include mixins.set-style("font-weight", "weights.normal");
+
+  span {
+    display: block;
+    font-size: 50%;
+
+    @include mixins.set-style("color", "fg1");
+    @include mixins.set-style("font-weight", "weights.normal");
+  }
+}
+
+h2 {
+  font-family: "Vollkorn", serif;
+  font-size: 2em;
+  font-style: italic;
+
+  @include mixins.set-style("font-weight", "weights.bold");
+}
+
+h3 {
+  font-family: "Vollkorn SC", serif;
+  font-size: 1.5em;
+
+  @include mixins.set-style("font-weight", "weights.normal");
+}
+
+p {
+  line-height: 1.75;
+  font-size: 125%;
+}
