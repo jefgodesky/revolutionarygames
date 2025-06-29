@@ -18,6 +18,7 @@
     "sass": "^1.89.2",
     "stylelint": "^16.21.0",
     "stylelint-config-recommended-scss": "^15.0.1",
+    "stylelint-config-standard": "^38.0.0",
     "vitest": "^3.2.4",
     "vitest-matchmedia-mock": "^2.0.3"
   }
