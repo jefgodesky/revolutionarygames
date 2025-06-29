@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "happy-dom": "^18.0.1",
+    "sass": "^1.89.2",
     "vitest": "^3.2.4",
     "vitest-matchmedia-mock": "^2.0.3"
   }
