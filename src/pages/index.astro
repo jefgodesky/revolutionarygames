@@ -1,20 +1,12 @@
 ---
-import { Image } from 'astro:assets'
-import LogoLight from '../assets/logo.light.png'
+import Head from '../components/head.astro'
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.light.ico" media="(prefers-color-scheme: light)" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.dark.ico" media="(prefers-color-scheme: dark)" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+	<Head
+		title="Revolutionary Games"
+		description="Revolutionary Games is a worker-owned collective revolutionizing tabletop game design with games and settings that deal with the challenges of revolutionary social change." />
 	<body>
-		<Image src={LogoLight} alt="Revolutionary Games" />
+		<p>Hello world</p>
 	</body>
 </html>
