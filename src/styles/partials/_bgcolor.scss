@@ -11,10 +11,18 @@ body {
   }
 
   @media (prefers-color-scheme: dark) {
-    background-image: url("/bg.dark.jpg")
+    background-image: url("/bg.small.dark.jpg");
+
+    @media (min-width: 1200px) {
+      background-image: url("/bg.dark.jpg");
+    }
   }
 
   @media (prefers-color-scheme: light) {
-    background-image: url("/bg.light.jpg")
+    background-image: url("/bg.small.light.jpg");
+
+    @media (min-width: 1200px) {
+      background-image: url("/bg.light.jpg");
+    }
   }
 }
