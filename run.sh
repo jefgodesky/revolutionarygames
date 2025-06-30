@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -d --name revolutionarygames -p 80:4321 revolutionarygames
+docker run -d --name revolutionarygames -p 8000:4321 revolutionarygames
