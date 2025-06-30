@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  CONTAINER: revolutionarygames
+  IMAGE: revolutionarygames:latest
+  PORT: 8000
+
 jobs:
   deploy:
     name: Deploy
@@ -21,5 +26,7 @@ jobs:
           script: |
             cd ~/${{ github.event.repository.name }}
             git pull
-            ./build.sh
-            ./run.sh
+            docker stop ${{ env.CONTAINER }}
+            docker rm ${{ env.CONTAINER }}
+            docker build -t ${{ env.IMAGE }} .
+            docker run -d --name "${{ env.CONTAINER }}" -p ${{ env.PORT }}:4321 "${{ env.IMAGE }}"
