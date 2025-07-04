@@ -39,7 +39,7 @@ $themes: (
   ),
   "dark": (
     "bg": colors.$black,
-    "bg1": color.adjust(colors.$black, $whiteness: 10%),
+    "bg1": color.adjust(colors.$black, $whiteness: 15%),
     "bg2": color.adjust(colors.$black, $whiteness: 5%),
     "fg": colors.$white,
     "fg1": color.adjust(colors.$white, $blackness: 20%),

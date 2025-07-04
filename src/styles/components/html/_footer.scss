@@ -1,0 +1,15 @@
+@use "../../modules/mixins";
+@use "../../modules/placeholders";
+
+footer {
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin: 1em 0;
+  padding: 1em 0;
+
+  @include mixins.set-style("border-top-color", "fg2");
+
+  ul {
+    @extend %unstyled-list;
+  }
+}
