@@ -1,0 +1,62 @@
+---
+interface Props {
+  audience: string
+  group: string
+  honeypot: string
+  gdpr: string
+}
+
+const { audience, group, honeypot, gdpr } = Astro.props
+---
+<form class="mailchimp-signup" data-audience={audience} data-group={group}>
+  <label>
+    <span>Email Address</span>
+    <input type="email" name="EMAIL" required placeholder="your@email.com" />
+  </label>
+
+  <input type="hidden" name={group} value="1" />
+  <input type="hidden" name={`gdpr[${gdpr}]`} value="1" />
+
+  <div class="scoot" aria-hidden="true">
+    <input type="text" name={honeypot} tabindex="-1" value="" aria-hidden="true" />
+  </div>
+
+  <button type="submit">Subscribe</button>
+  <p class="subscribe-result" aria-live="polite"></p>
+
+  <p class="legal">By submitting this form, you give us permission to
+    send you emails. You can unsubscribe at any time by clicking the
+    link in the footer of those emails.</p>
+</form>
+
+<script>
+  const form = document.querySelector('form.mailchimp-signup') as HTMLFormElement | null
+  const result = document.querySelector('p.subscribe-result') as HTMLParagraphElement | null
+
+  form?.addEventListener('submit', event => {
+    event.preventDefault()
+
+    const { audience, group } = form.dataset
+    if (!audience || !group) return
+
+    const params = new URLSearchParams(
+      [...new FormData(form)].map(([k, v]) => [k, v.toString()])
+    ).toString()
+    const callback = `mcCallback_${Date.now()}`
+    const url = `${audience}&${params}&c=${callback}`;
+
+    const win = window as unknown as Record<string, unknown>
+    win[callback] = (data: { result: string; msg: string }) => {
+      if (!result) return
+      result.textContent = data.result === 'success'
+        ? 'Thanks! Check your inbox to confirm.'
+        : data.msg.replace(/\d+ - /, '');
+      delete win[callback]
+    };
+
+    const script = document.createElement('script')
+    script.src = url
+    document.body.appendChild(script)
+    script.remove()
+  })
+</script>

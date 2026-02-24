@@ -1,0 +1,45 @@
+@use "../modules/mixins";
+
+.mailchimp-signup {
+  label span {
+    display: block;
+    font-family: "Vollkorn SC", serif;
+    font-size: 1.25em;
+  }
+
+  input {
+    @include mixins.set-style("background", "bg1");
+    @include mixins.set-style("color", "fg");
+    appearance: none;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    width: 100%;
+  }
+
+  button {
+    @include mixins.set-style("background", "links.base");
+    @include mixins.set-style("color", "bg");
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Vollkorn SC", serif;
+    font-size: 1.25em;
+    margin: 0.5em 0;
+    padding: 0.25em 2em;
+
+    &:hover {
+      @include mixins.set-style("background", "links.hover");
+    }
+  }
+
+  .legal {
+    font-size: 80%;
+  }
+
+  .scoot {
+    position: absolute;
+    left: -5000px;
+    font-size: 1px;
+  }
+}

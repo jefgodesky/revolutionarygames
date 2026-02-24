@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/Main.astro'
 import ThemedImage from '../components/ThemedImage.astro'
+import MailchimpSignup from '../components/MailchimpSignup.astro'
 
 import LogoLight from '../assets/logo.light.png'
 import LogoDark from '../assets/logo.dark.png'
@@ -13,6 +14,9 @@ import SBDark from '../assets/sb.dark.png'
 
 import FWLight from '../assets/5w.light.png'
 import FWDark from '../assets/5w.dark.png'
+
+import BarricadeLight from '../assets/barricade.light.png'
+import BarricadeDark from '../assets/barricade.dark.png'
 ---
 
 <MainLayout
@@ -56,6 +60,8 @@ import FWDark from '../assets/5w.dark.png'
 		</ul>
 	</section>
 
+	<hr />
+
 	<section class="project" id="scarletbanner">
 		<ThemedImage
 			light={SBLight}
@@ -80,13 +86,15 @@ import FWDark from '../assets/5w.dark.png'
 		</ul>
 	</section>
 
+	<hr />
+
 	<section class="project" id="thefifthworld">
 		<ThemedImage
 			light={FWLight}
 			dark={FWDark}
 			alt="The Fifth World"
-			height={600}
-			width={1200}
+			height={274}
+			width={3600}
 			pictureClasses={['logo']}
 		/>
 		<p><em>The Fifth World</em> is 144,000 days (one
@@ -105,6 +113,32 @@ import FWDark from '../assets/5w.dark.png'
 			</li>
 		</ul>
 	</section>
+
+	<hr />
+	<section class="email">
+		<ThemedImage
+			light={BarricadeLight}
+			dark={BarricadeDark}
+			alt="The Barricade"
+			height={600}
+			width={1200}
+			pictureClasses={['logo']}
+		/>
+
+		<p><em>The Barricade</em> is our biweekly newsletter that collects
+		  our public writings on our games and settings, from game design
+		  to the themes, philosophy, and politics they represent. Each
+		  issue also comes with an exclusive deal, offer, or gift.</p>
+
+		<MailchimpSignup
+			audience="https://thefifthworld.us19.list-manage.com/subscribe/post-json?u=16621fb5062428d5db0d4fbe4&id=88efe4bbc2&f_id=008fa5e7f0"
+			group="group[182524][1]"
+			honeypot="b_16621fb5062428d5db0d4fbe4_88efe4bbc2"
+			gdpr="23623"
+		/>
+	</section>
+
+	<hr />
 
 	<section class="patreon">
 		<p>If you appreciate what we&rsquo;re doing and want to support it,
