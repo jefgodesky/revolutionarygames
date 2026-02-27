@@ -29,4 +29,4 @@ jobs:
             docker stop ${{ env.CONTAINER }}
             docker rm ${{ env.CONTAINER }}
             docker build -t ${{ env.IMAGE }} .
-            docker run -d --name "${{ env.CONTAINER }}" -p ${{ env.PORT }}:4321 "${{ env.IMAGE }}"
+            docker run -d --name "${{ env.CONTAINER }}" --restart unless-stopped -p ${{ env.PORT }}:80 "${{ env.IMAGE }}"
